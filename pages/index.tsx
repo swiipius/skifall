@@ -1,3 +1,4 @@
+import Video from "@/components/Video";
 import Head from "next/head";
 import Image from "next/image";
 import { useState } from "react";
@@ -98,6 +99,7 @@ export default function Home() {
           ))}
         </div>
       </div>
+      <Video />
     </div>
   );
 }
