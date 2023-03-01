@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
 import { RxDotFilled } from "react-icons/rx";
+import ReactPlayer from "react-player";
 
 export default function Home() {
   const slides = [
@@ -48,11 +49,11 @@ export default function Home() {
   };
 
   return (
-    <div className="bg-[#729EA8] w-screen h-screen">
+    <div className="bg-[#729EA8] w-screen h-screen overflow-x-hidden">
       <Head>
         <title>Skifall</title>
       </Head>
-      <div className="flex justify-between items-center bg-[#006378]">
+      <div className="w-screen flex justify-between items-center bg-[#006378] mb-5">
         <Image alt="Logo" src="/images/Skifall.png" width="75" height="500" />
         <div className="flex-column">
           <h1 className="text-align-center font-RobotoMono font-semiold text-xl">
@@ -70,21 +71,21 @@ export default function Home() {
           onClick={toggleShow}
         />
       </div>
+      <div className="bg-white w-screen h-10 rotate-1 translate-y-[-40px]"></div>
 
-      <div className="w-screen my-5">
-        {/* <button onClick={toggleShow}>Show name</button> */}
-        <div className="w-full flex items-center justify-center relative group">
+      <div className="w-screen py-5 overflow-hidden">
+        <div className="w-screen flex items-center justify-center relative group">
           <Image
             alt="carroussel"
             src={`${slides[currentIndex].url}`}
             width="500"
             height="500"
           />
-          <div className="absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full text-white cursor-pointer">
-            <BsChevronCompactLeft onClick={prevSlide} size={30} />
+          <div className="absolute top-[50%] -translate-x-0 translate-y-[-50%] left-20 text-2xl rounded-full text-white cursor-pointer">
+            <BsChevronCompactLeft onClick={prevSlide} size={50} />
           </div>
-          <div className="absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full text-white cursor-pointer">
-            <BsChevronCompactRight onClick={nextSlide} size={30} />
+          <div className="absolute top-[50%] -translate-x-0 translate-y-[-50%] right-20 text-2xl rounded-full text-white cursor-pointer">
+            <BsChevronCompactRight onClick={nextSlide} size={50} />
           </div>
         </div>
         <div className="flex top-4 justify-center">
@@ -99,7 +100,16 @@ export default function Home() {
           ))}
         </div>
       </div>
-      <Video />
+      <div className="bg-white w-screen h-10 rotate-1 translate-y-5"></div>
+      <div className="bg-[#00475D] w-screen h-screen overflow-x-hidden py-5">
+        <ReactPlayer
+          url="/images/B16_Coulisses.mp4"
+          controls
+          playing
+          width="100%"
+          height="100vh"
+        />
+      </div>
     </div>
   );
 }
