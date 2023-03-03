@@ -1,4 +1,3 @@
-import Video from "@/components/Video";
 import Head from "next/head";
 import Image from "next/image";
 import { useState } from "react";
@@ -60,7 +59,7 @@ export default function Home() {
             {show && <p>This is Skifall !</p>}
           </h1>
           <h1 className="text-align-center font-RobotoMono font-semiold text-xl">
-            {!show && <p>This is Ski-feur !</p>}
+            {!show && <p>This is S&apos;quoi? Feur !</p>}
           </h1>
         </div>
         <Image
@@ -101,12 +100,12 @@ export default function Home() {
         </div>
       </div>
       <div className="bg-white w-screen h-10 rotate-1 translate-y-5"></div>
-      <div className="bg-[#00475D] w-screen h-screen overflow-x-hidden py-5">
+      <div className="bg-[#00475D] w-screen h-screen overflow-x-hidden py-5 flex justify-center">
         <ReactPlayer
           url="/images/B16_Coulisses.mp4"
           controls
           playing
-          width="100%"
+          width="auto"
           height="100vh"
         />
       </div>
